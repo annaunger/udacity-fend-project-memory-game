@@ -20,17 +20,17 @@
       'fa fa-cube',
       'fa fa-cube'];
 
-  const cardsContainer = document.querySelector('.deck');
+  const cardsContainer = document.querySelector(".deck");
 
   // Create the cards
   for(let i = 0; i < icons.length; i++) {
-    const card = document.createElement('li');
-    card.classList.add('card');
+    const card = document.createElement("li");
+    card.classList.add("card");
     card.innerHTML = `<i class="${icons[i]}"></i>`;
     cardsContainer.appendChild(card);
 
     // card click event
-    card.addEventlistener('click', function () {
+    card.addEventlistener("click", function() {
       console.log(card.innerHTML);
     });
   }
