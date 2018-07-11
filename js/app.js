@@ -33,8 +33,25 @@
 
     // card click event
     card.addEventListener("click", function() {
-      card.classList.add("open", "show");
-      openedCards.push(this);
+      // We have an existing OPENED card
+      if(openedCards.length === i) {
+        card.classList.add("open", "show");
+        openedCards.push(this);
+
+        // We should compare our 2 opened cards!
+        if(this.innerHTML === openedCards[0].innerHTML) {
+          console.log("Matched!");
+        } else {
+          console.log("Doesn't match!");
+        }
+
+      } else {
+      // We don't have any opened cards
+      if(openedCards.length === i) {
+        card.classList.add("open", "show");
+        openedCards.push(this);
+      }
+
     });
   }
 
