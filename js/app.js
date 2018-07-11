@@ -49,7 +49,7 @@
       // We don't have any opened cards
         card.classList.add("open", "show");
         openedCards.push(this);
-      }
+
 
     });
   }
