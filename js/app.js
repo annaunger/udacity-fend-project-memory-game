@@ -53,6 +53,7 @@
 
     });
   }
+}
 
    /*if(openedCards.length === i)
     * Display the cards on the page
