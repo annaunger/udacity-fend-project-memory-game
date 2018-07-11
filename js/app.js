@@ -1,8 +1,23 @@
 /*
  * Create a list that holds all of your cards
  */
-
-
+ const matchingCardsArray = ['fa fa-diamond', 'fa fa-paper-plane-o', 'fa fa-anchor', 'fa fa-bolt', 'fa fa-cube', 'fa fa-anchor', 'fa fa-leaf', 'fa fa-bicycle', 'fa fa-diamond', 'fa fa-bomb', 'fa fa-bolt', 'fa fa-bicycle', 'fa fa-paper-plane-o', 'fa fa-cube'];
+/*
+ * Create new cards
+ */
+ function createNewCards() {
+     shuffledArray = shuffle(matchingCardsArray);
+     for (var i = 0; i < matchingCardsArray.length; i++) {
+         let currentCards = document.createElement('li');
+         currentCards.currentCards.add('card');
+         let cardDesign = document.createElement('i');
+         cardDesign.classlist.add('fa');
+         cardDesign.classlist.add(shuffledArray[i]);
+         currentCards.appendChild(cardDesign);
+         deck.appendChild(currentCards);
+         currentCards.addEventlistener('click', clicked);
+     }
+ };
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
