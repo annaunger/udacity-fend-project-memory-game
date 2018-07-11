@@ -2,12 +2,12 @@
  * Create a list that holds all of your cards
  */
  //createNewCards();
- const deck = document.getElementById('totalDeck');
+ /*const deck = document.getElementById('totalDeck');
  let openArray = [];
- let matchedArray = [];
+ let matchedArray = [];*/
 
  const icons = [
-   'fa fa-diamond', 
+   'fa fa-diamond',
    'fa fa-diamond',
    'fa fa-anchor',
    'fa fa-anchor',
@@ -26,7 +26,7 @@
 /*
  * Create new cards
  */
- let shuffledArray = [];
+ /*let shuffledArray = [];
  function createNewCards() {
      shuffledArray = shuffle(matchingCardsArray);
      for (var i = 0; i < matchingCardsArray.length; i++) {
@@ -39,7 +39,7 @@
          deck.appendChild(currentCards);
          currentCards.addEventlistener('click', clicked);
      }
- };
+ };*/
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -50,14 +50,14 @@
  /*
   * set up the event listener for a card. If a card is clicked:
   */
- function clicked(event) {
+ /*function clicked(event) {
     event.target.classList.add('open', 'show');
     event.target.removeEventListener('click', clicked);
     checkCard(event);
     if (timeStart === false) {
         startTimer()
     }
-};
+};*/
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
@@ -69,10 +69,10 @@ function shuffle(array) {
         temporaryValue = array[currentIndex];
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
-    }
+    };
 
     return array;
-}
+};
 
 
 /*
