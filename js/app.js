@@ -23,8 +23,8 @@
   const cardsContainer = document.querySelector('.deck');
 
   // Create the cards
-  for (let i = 0; i < icons.length; i++) {
-    const card = document.createElement('li');
+  for(let i = 0; i < icons.length; i++) {
+    const card = document.createElement('div');
     card.classList.add('card');
     card.innerHTML = `<i class="${icons[i]}"></i>`;
     cardsContainer.appendChild(card);
