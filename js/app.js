@@ -20,6 +20,15 @@
       'fa fa-cube',
       'fa fa-cube'];
 
+  const cardsContainer = document.querySelector('.deck');
+
+  // Create the cards
+  for (let i = 0; i < icons.length; i++) {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    cardsContainer.appendChild(card);
+  }
+
    /*
     * Display the cards on the page
     *   - shuffle the list of cards using the provided "shuffle" method below
