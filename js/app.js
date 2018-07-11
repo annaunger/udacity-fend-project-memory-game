@@ -23,6 +23,7 @@
   const cardsContainer = document.querySelector(".deck");
 
   let openedCards = [];
+  let matchedCards = [];
 
   // Create the cards
   for(let i = 0; i < icons.length; i++) {
@@ -33,26 +34,46 @@
 
     // card click event
     card.addEventListener("click", function() {
+
+      const currentCard = this;
+      const previousCard = openedCards[0];
+
       // We have an existing OPENED card
       if(openedCards.length === 1) {
+
 
         card.classList.add("open", "show");
         openedCards.push(this);
 
         // We should compare our 2 opened cards!
-        if(this.innerHTML === openedCards[0].innerHTML) {
-          console.log("Matched!");
+        if(currentCard.innerHTML === previousCard.innerHTML) {
+
+          // Matched
+          currentCard.classList.add("match");
+          previousCard.classList.add("match");
+
+          matchedCards.push(currentCard, previousCard);
+
+          openedCards = [];
+
         } else {
-          console.log("Doesn't match!");
+          currentCard.classList.remove("open", "show");
+          previousCard.classList.remove("open", "show");
+
+          openedCards = [];
         }
 
       } else {
       // We don't have any opened cards
-        card.classList.add("open", "show");
+        currentCard.classList.add("open", "show");
         openedCards.push(this);
       }
 
     });
+  }
+
+  function isOver() {
+
   }
 
 
