@@ -35,6 +35,7 @@
     card.addEventListener("click", function() {
       // We have an existing OPENED card
       if(openedCards.length === i) {
+
         card.classList.add("open", "show");
         openedCards.push(this);
 
@@ -49,11 +50,11 @@
       // We don't have any opened cards
         card.classList.add("open", "show");
         openedCards.push(this);
-
+      }
 
     });
   }
-}
+
 
    /*if(openedCards.length === i)
     * Display the cards on the page
