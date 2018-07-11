@@ -34,7 +34,7 @@
     // card click event
     card.addEventListener("click", function() {
       // We have an existing OPENED card
-      if(openedCards.length === i) {
+      if(openedCards.length === 1) {
 
         card.classList.add("open", "show");
         openedCards.push(this);
