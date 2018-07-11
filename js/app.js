@@ -22,6 +22,8 @@
 
   const cardsContainer = document.querySelector(".deck");
 
+  let openedCards = [];
+
   // Create the cards
   for(let i = 0; i < icons.length; i++) {
     const card = document.createElement("li");
@@ -31,7 +33,8 @@
 
     // card click event
     card.addEventListener("click", function() {
-      card.classList.add("open", "show")
+      card.classList.add("open", "show");
+      openedCards.push(this);
     });
   }
 
