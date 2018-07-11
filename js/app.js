@@ -2,6 +2,10 @@
  * Create a list that holds all of your cards
  */
  const deck = document.getElementById('totalDeck');
+ let openArray = [];
+ let shuffledArray = [];
+ let matchedArray = [];
+
  const matchingCardsArray = ['fa fa-diamond', 'fa fa-diamond', 'fa fa-anchor', 'fa fa-anchor', 'fa fa-paper-plane-o', 'fa fa-paper-plane-o', 'fa fa-bolt', 'fa fa-bolt', 'fa fa-bomb', 'fa fa-bomb', 'fa fa-leaf', 'fa fa-leaf', 'fa fa-bicycle', 'fa fa-bicycle', 'fa fa-cube', 'fa fa-cube'];
 /*
  * Create new cards
@@ -15,7 +19,7 @@
          let cardIcon = document.createElement('i');
          cardIcon.classList.add('fa');
          cardIcon.classList.add(shuffledArray[i]);
-         currentCards.appendChild(cardDesign);
+         currentCards.appendChild(cardIcon);
          deck.appendChild(currentCards);
          currentCards.addEventlistener('click', clicked);
      }
@@ -26,6 +30,10 @@
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
+
+ /*
+  * set up the event listener for a card. If a card is clicked:
+  */
  function clicked(event) {
     event.target.classList.add('open', 'show');
     event.target.removeEventListener('click', clicked);
