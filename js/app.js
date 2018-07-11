@@ -10,9 +10,9 @@
      for (var i = 0; i < matchingCardsArray.length; i++) {
          let currentCards = document.createElement('li');
          currentCards.currentCards.add('card');
-         let cardDesign = document.createElement('i');
-         cardDesign.classlist.add('fa');
-         cardDesign.classlist.add(shuffledArray[i]);
+         let cardIcon = document.createElement('i');
+         cardIcon.classList.add('fa');
+         cardIcon.classList.add(shuffledArray[i]);
          currentCards.appendChild(cardDesign);
          deck.appendChild(currentCards);
          currentCards.addEventlistener('click', clicked);
@@ -24,6 +24,14 @@
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
+ function clicked(event) {
+    event.target.classList.add('open', 'show');
+    event.target.removeEventListener('click', clicked);
+    checkCard(event);
+    if (timeStart === false) {
+        startTimer()
+    }
+};
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
