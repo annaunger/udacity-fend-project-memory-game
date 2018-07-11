@@ -47,7 +47,6 @@
 
       } else {
       // We don't have any opened cards
-      if(openedCards.length === i) {
         card.classList.add("open", "show");
         openedCards.push(this);
       }
@@ -55,7 +54,7 @@
     });
   }
 
-   /*
+   /*if(openedCards.length === i)
     * Display the cards on the page
     *   - shuffle the list of cards using the provided "shuffle" method below
     *   - loop through each card and create its HTML
