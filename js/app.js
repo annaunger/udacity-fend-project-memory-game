@@ -28,6 +28,11 @@
     card.classList.add('card');
     card.innerHTML = `<i class="${icons[i]}"></i>`;
     cardsContainer.appendChild(card);
+
+    // card click event
+    card.addEventlistener('click', function() {
+      console.log(card.innerHTML);
+    });
   }
 
    /*
