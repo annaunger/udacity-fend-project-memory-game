@@ -30,7 +30,7 @@
     cardsContainer.appendChild(card);
 
     // card click event
-    card.addEventlistener("click", function() {
+    card.addEventListener("click", function() {
       console.log(card.innerHTML);
     });
   }
