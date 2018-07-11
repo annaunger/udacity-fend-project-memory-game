@@ -31,7 +31,7 @@
 
     // card click event
     card.addEventListener("click", function() {
-      console.log(card.innerHTML);
+      card.classList.add("open", "show")
     });
   }
 
