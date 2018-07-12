@@ -99,8 +99,10 @@ function init() {
        setTimeout(function() {
            currentCard.classList.remove("open", "show", "disable");
            previousCard.classList.remove("open", "show", "disable");
-           openedCards = [];
+
        }, 500);
+
+       openedCards = [];
  } /*<--*/
 
  // Add New move
@@ -150,11 +152,14 @@ function addMove() {
      break;
    } */
 
-   if(20 > moves > 25) {
+   if(17 < moves < 25) {
      starsContainer,innerHTML = `<li><i class="fa fa-star"></i></li>
      <li><i class="fa fa-star"></i></li>`;
    } else if(moves > 25) {
      starsContainer,innerHTML = `<li><i class="fa fa-star"></i></li>`;
+   } else {
+     starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
+     <li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
    }
  }
 
