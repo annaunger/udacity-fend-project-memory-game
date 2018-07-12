@@ -25,12 +25,29 @@ const cardsContainer = document.querySelector(".deck");
 let openedCards = [];
 let matchedCards = [];
 
-// Create the cards
-for (let i = 0; i < icons.length; i++) {
-    const card = document.createElement("li");
-    card.classList.add("card");
-    card.innerHTML = `<i class="${icons[i]}"></i>`;
-    cardsContainer.appendChild(card);
+/*
+ * Initialize the game
+ */
+
+function init() {
+  for (let i = 0; i < icons.length; i++) {
+      const card = document.createElement("li");
+      card.classList.add("card");
+      card.innerHTML = `<i class="${icons[i]}"></i>`;
+      cardsContainer.appendChild(card);
+
+      // Add Click Event to each card
+      click(card);
+      }
+}
+
+
+  /*
+   * Click event
+   */
+   function click(card) {
+
+
 
     // card click event
     card.addEventListener("click", function() {
@@ -41,47 +58,82 @@ for (let i = 0; i < icons.length; i++) {
         // We have an existing OPENED card
         if (openedCards.length === 1) {
 
-            card.classList.add("open", "show");
+            card.classList.add("open", "show", "disable");
             openedCards.push(this);
 
             // We should compare our 2 opened cards!
-            if (currentCard.innerHTML === previousCard.innerHTML) {
+            compare(currentCard, previousCard);
 
-                // Matched
-                currentCard.classList.add("match");
-                previousCard.classList.add("match");
-
-                matchedCards.push(currentCard, previousCard);
-
-                openedCards = [];
-
-                // Check if the game is over!
-                isOver();
-
-            } else {
-
-                // Wait 500 ms, then do this:
-                setTimeout(function() {
-                    currentCard.classList.remove("open", "show");
-                    previousCard.classList.remove("open", "show");
-                    openedCards = [];
-                }, 500);
-            }
+            // den här blev kvar --> jag tar den till rad 103 }
 
         } else {
             // We don't have any opened cards
-            currentCard.classList.add("open", "show");
+            currentCard.classList.add("open", "show", "disable");
             openedCards.push(this);
         }
     });
+} /* den här har jag satt dit */
+
+/*
+ * Compare the two cards
+ */
+ function compare(currentCard, previousCard) {
+   if (currentCard.innerHTML === previousCard.innerHTML) {
+
+       // Matched
+       currentCard.classList.add("match");
+       previousCard.classList.add("match");
+
+       matchedCards.push(currentCard, previousCard);
+
+       openedCards = [];
+
+       // Check if the game is over!
+       isOver();
+
+   } else {
+
+       // Wait 500 ms, then do this:
+       setTimeout(function() {
+           currentCard.classList.remove("open", "show", "disable");
+           previousCard.classList.remove("open", "show", "disable");
+           openedCards = [];
+       }, 500);
+ } <--
 }
 
+/*
+ * Check if the game is over!
+ */
 function isOver() {
     if (matchedCards.length === icons.length) {
-        alert("Well done, you made it!")
+        alert("Well done, you made it!");
     }
+  }
 
-}
+/*
+ * Restart button
+ */
+ const restartBtn = document.querySelector(".restart");
+ restartBtn.addEventListener("click", function() {
+   // Delete all cards
+   cardsContainer.innerHTML = "";
+
+   // Call ``ìnit` to create new cards
+   init();
+
+   // Reset ANY RELATED variables
+   matchedCards = [];
+ });
+
+
+///// Start the game for the first time!
+init();
+
+
+
+
+} /*?*/
 
 
 /*if(openedCards.length === i)
@@ -118,3 +170,27 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
+
+ /*
+ if (currentCard.innerHTML === previousCard.innerHTML) {
+
+     // Matched
+     currentCard.classList.add("match");
+     previousCard.classList.add("match");
+
+     matchedCards.push(currentCard, previousCard);
+
+     openedCards = [];
+
+     // Check if the game is over!
+     isOver();
+
+ } else {
+
+     // Wait 500 ms, then do this:
+     setTimeout(function() {
+         currentCard.classList.remove("open", "show");
+         previousCard.classList.remove("open", "show");
+         openedCards = [];
+     }, 500);
+     */
