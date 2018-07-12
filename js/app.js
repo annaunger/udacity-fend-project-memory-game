@@ -129,6 +129,10 @@ function addMove() {
 }
 
 /*
+ * Rating
+ */
+
+/*
  * Restart button
  */
  const restartBtn = document.querySelector(".restart");
@@ -150,7 +154,7 @@ init();
 
 
 
-} /*?*/
+/* } ?*/
 
 
 /*if(openedCards.length === i)
