@@ -78,6 +78,8 @@ function init() {
  * Compare the two cards
  */
  function compare(currentCard, previousCard) {
+
+   // Matcher
    if (currentCard.innerHTML === previousCard.innerHTML) {
 
        // Matched
@@ -99,7 +101,12 @@ function init() {
            previousCard.classList.remove("open", "show", "disable");
            openedCards = [];
        }, 500);
- } <--
+ } /*<--*/
+
+ // Add New move
+ addMove();
+
+
 }
 
 /*
@@ -110,6 +117,16 @@ function isOver() {
         alert("Well done, you made it!");
     }
   }
+
+/*
+ * Add move
+ */
+const movesContainer = document.querySelector(".moves");
+let moves = 0;
+function addMove() {
+  moves++;
+  movesContainer.innerHTML = moves;
+}
 
 /*
  * Restart button
