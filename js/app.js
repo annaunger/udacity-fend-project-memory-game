@@ -61,14 +61,16 @@
 
         } else {
 
+
           // Wait 500 ms, then do this:
           setTimeout(function() {
             currentCard.classList.remove("open", "show");
             previousCard.classList.remove("open", "show");
+            openedCards = [];
           }, 500);
 
 
-          openedCards = [];
+
         }
 
       } else {
