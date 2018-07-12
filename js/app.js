@@ -56,6 +56,9 @@
 
           openedCards = [];
 
+          // Check if the game is over!
+          isOver();
+
         } else {
           currentCard.classList.remove("open", "show");
           previousCard.classList.remove("open", "show");
@@ -73,6 +76,9 @@
   }
 
   function isOver() {
+    if(matchedCards.length === icons.length) {
+      alert("Well done, you made it!")
+    }
 
   }
 
