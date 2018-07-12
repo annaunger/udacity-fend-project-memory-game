@@ -123,14 +123,40 @@ function isOver() {
  */
 const movesContainer = document.querySelector(".moves");
 let moves = 0;
+movesContainer.innerHTML = 0;
 function addMove() {
   moves++;
   movesContainer.innerHTML = moves;
+
+  // Set the Rating
+  rating();
 }
 
 /*
  * Rating
  */
+
+ const starsContainer = document.querySelector(".stars");
+ starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
+ <li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
+ function rating() { /*
+   switch (moves) {
+     case 20:
+       starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
+       <li><i class="fa fa-star"></i></li>`;
+       break;
+     case 25:
+     starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>`;
+     break;
+   } */
+
+   if(20 > moves > 25) {
+     starsContainer,innerHTML = `<li><i class="fa fa-star"></i></li>
+     <li><i class="fa fa-star"></i></li>`;
+   } else if(moves > 25) {
+     starsContainer,innerHTML = `<li><i class="fa fa-star"></i></li>`;
+   }
+ }
 
 /*
  * Restart button
@@ -145,6 +171,10 @@ function addMove() {
 
    // Reset ANY RELATED variables
    matchedCards = [];
+   moves = 0;
+   movesContainer.innerHTML = moves;
+   starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
+   <li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
  });
 
 
