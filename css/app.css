@@ -113,12 +113,12 @@ h1 {
 }
 
 @media screen and (max-width: 550px) {
-  header {
-    font-size: 50px;
+  h1 {
+    font-size: 100px;
     font-weight: 800px;
   }
   .score-panel {
-    font-size: 30px;
+    font-size: : 100px;
     font-weight: 600px;
   }
 }
