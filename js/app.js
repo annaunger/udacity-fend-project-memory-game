@@ -163,10 +163,16 @@ const starsContainer = document.querySelector(".stars");
 
 function rating() {
 
-    if (moves > 3) {
-        starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
-     <li><i class="fa fa-star"></i></li>`;
-    }
+    if (moves < 3) {
+        starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
+   } else if (> 2 moves < 5) {
+     starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
+  <li><i class="fa fa-star"></i></li>`;
+
+} else {
+  starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>`;
+
+}
 
 }
 
