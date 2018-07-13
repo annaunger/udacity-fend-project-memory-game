@@ -159,6 +159,7 @@ function addMove() {
  */
 
 const starsContainer = document.querySelector(".stars");
+moves = 0;
 
 
 function rating() {
