@@ -24,6 +24,7 @@ const cardsContainer = document.querySelector(".deck");
 
 let openedCards = [];
 let matchedCards = [];
+rating();
 
 
 /*
@@ -39,7 +40,7 @@ function init() {
 
         // Add Click Event to each card
         click(card);
-        rating();
+
     }
 }
 
