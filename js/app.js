@@ -106,6 +106,12 @@ function compare(currentCard, previousCard) {
         }, 500);
         isOver();
 
+        function isOver() {
+            if (matchedCards.length === icons.length) {
+                alert("Well done, you made it!");
+            }
+        }
+
         openedCards = [];
     }
 
@@ -119,11 +125,11 @@ function compare(currentCard, previousCard) {
  * Check if the game is over!
  */
 
-function isOver() {
+/*function isOver() {
     if (matchedCards.length === icons.length) {
         alert("Well done, you made it!");
     }
-}
+}*/
 
 /*// Wait 500 ms, then do this:
 setTimeout(function() {
