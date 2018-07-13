@@ -159,12 +159,12 @@ function addMove() {
  */
 
 const starsContainer = document.querySelector(".stars");
-moves = 0;
+
 
 
 function rating() {
 
-    if (moves < 3) {
+    if (moves === 0 || moves < 3) {
         starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
    } else if (moves > 2 && moves < 5) {
      starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
