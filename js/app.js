@@ -152,7 +152,7 @@ function addMove() {
     moves++;
     movesContainer.innerHTML = moves;
 
-    Set the Rating
+    //Set the Rating
     rating();
 }
 
