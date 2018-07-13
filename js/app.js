@@ -118,13 +118,13 @@ function compare(currentCard, previousCard) {
         }
 
         openedCards = [];
-    }
+    //}  // <--- ?
 
     // Add New move
     addMove();
 
 
-}
+}  // <--- ?
 
 /*
  * Check if the game is over!
