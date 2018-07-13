@@ -104,7 +104,7 @@ function compare(currentCard, previousCard) {
             previousCard.classList.remove("open", "show", "disable");
 
         }, 500);
-        isOver();
+        //isOver();
 
         function isOver() {
             if (matchedCards.length === icons.length) {
