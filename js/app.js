@@ -164,19 +164,19 @@ starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
 
 function rating() {
 
-    if (17 < moves < 25) {
+    if (moves < 15) {
         starsContainer,
         innerHTML = `<li><i class="fa fa-star"></i></li>
      <li><i class="fa fa-star"></i></li>`;
     }
-    else if (moves > 25) {
+    else if (moves > 15) {
         starsContainer,
         innerHTML = `<li><i class="fa fa-star"></i></li>`;
     }
-    else {
+    /*else {
         starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
      <li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
-    }
+   }*/
 }
 
 /*
