@@ -31,7 +31,7 @@ let matchedCards = [];
  */
 
 function init() {
-    for (let i = 0; i < icons.length; i++) {
+    for (let i = 0; i <= icons.length; i++) {
         const card = document.createElement("li");
         card.classList.add("card");
         card.innerHTML = `<i class="${icons[i]}"></i>`;
