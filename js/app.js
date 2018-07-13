@@ -159,24 +159,15 @@ function addMove() {
  */
 
 const starsContainer = document.querySelector(".stars");
-starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
- <li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
+
 
 function rating() {
 
-    if (moves === 3) {
-        starsContainer,
-        innerHTML = `<li><i class="fa fa-star"></i></li>
+    if (moves > 3) {
+        starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
      <li><i class="fa fa-star"></i></li>`;
     }
-    else if (moves === 2) {
-        starsContainer,
-        innerHTML = `<li><i class="fa fa-star"></i></li>`;
-    }
-    /*else {
-        starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
-     <li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
-   }*/
+
 }
 
 /*
