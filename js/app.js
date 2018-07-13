@@ -109,8 +109,11 @@ function compare(currentCard, previousCard) {
         //isOver();
 
         function isOver() {
-            if (matchedCards.length === icons.length) {
-                alert("Well done, you made it!");
+            /*if (matchedCards.length === icons.length) {
+                alert("Well done, you made it!");*/
+            if(matchedCards === 8) {
+              modal.innerHTML = "Well done!";
+            }
             }
         }
 
