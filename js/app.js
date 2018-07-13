@@ -164,6 +164,8 @@ function addMove() {
  */
 
 const starsContainer = document.querySelector(".stars");
+starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
+<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
 
 function rating() {
 
