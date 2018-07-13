@@ -31,7 +31,7 @@ let matchedCards = [];
  */
 
 function init() {
-    for (let i = 0; i <= icons.length; i++) {
+    for (let i = 0; i < icons.length; i++) {
         const card = document.createElement("li");
         card.classList.add("card");
         card.innerHTML = `<i class="${icons[i]}"></i>`;
@@ -94,7 +94,7 @@ function compare(currentCard, previousCard) {
         openedCards = [];
 
         // Check if the game is over!
-        isOver();
+        //isOver();
 
     } else {
 
@@ -104,6 +104,7 @@ function compare(currentCard, previousCard) {
             previousCard.classList.remove("open", "show", "disable");
 
         }, 500);
+        isOver();
 
         openedCards = [];
     }
@@ -123,6 +124,13 @@ function isOver() {
         alert("Well done, you made it!");
     }
 }
+
+/*// Wait 500 ms, then do this:
+setTimeout(function() {
+    currentCard.classList.remove("open", "show", "disable");
+    previousCard.classList.remove("open", "show", "disable");
+
+}, 500);*/
 
 /*
  * Add move
