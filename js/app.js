@@ -180,17 +180,29 @@ function addMove() {
 
  const starsContainer = document.querySelector(".stars");
  starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
+ <li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>
  <li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
 
  function rating() {
 
-     if (moves === 0 || moves < 3) {
-         starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
-     } else if (moves > 2 && moves < 5) {
-         starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
+     if (moves < 11) {
+         starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>
    <li><i class="fa fa-star"></i></li>`;
 
-     } else {
+     } else if (moves > 10 && moves < 15) {
+         starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
+   <li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>
+<li><i class="fa fa-star"></i></li>`;
+
+ } else if (moves > 14 && moves < 20) {
+         starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
+   <li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
+
+ } else if (moves > 19 && moves < 25) {
+             starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
+       <li><i class="fa fa-star"></i></li>`;
+
+         } else {
          starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>`;
 
      }
