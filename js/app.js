@@ -165,7 +165,7 @@ function rating() {
 
     if (moves < 3) {
         starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
-   } else if (> 2 moves < 5) {
+   } else if (moves > 2 && moves < 5) {
      starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
   <li><i class="fa fa-star"></i></li>`;
 
