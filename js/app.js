@@ -25,13 +25,12 @@ const cardsContainer = document.querySelector(".deck");
 let openedCards = [];
 let matchedCards = [];
 
-
-
+// Hide modal
 /*
  * Initialize the game
  */
 
-function init() {
+function init(array) {
     for (let i = 0; i < icons.length; i++) {
         const card = document.createElement("li");
         card.classList.add("card");
@@ -43,6 +42,22 @@ function init() {
 
     }
 }
+
+// Shuffle function from http://stackoverflow.com/a/2450976
+function shuffle(array) {
+    var currentIndex = array.length,
+        temporaryValue, randomIndex;
+
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    };
+
+    return array;
+};
 
 
 /*
@@ -163,24 +178,24 @@ function addMove() {
  * Rating
  */
 
-const starsContainer = document.querySelector(".stars");
-starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
-<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
+ const starsContainer = document.querySelector(".stars");
+ starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
+ <li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
 
-function rating() {
+ function rating() {
 
-    if (moves === 0 || moves < 3) {
-        starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
-   } else if (moves > 2 && moves < 5) {
-     starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
-  <li><i class="fa fa-star"></i></li>`;
+     if (moves === 0 || moves < 3) {
+         starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
+     } else if (moves > 2 && moves < 5) {
+         starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
+   <li><i class="fa fa-star"></i></li>`;
 
-} else {
-  starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>`;
+     } else {
+         starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>`;
 
-}
+     }
 
-}
+ }
 
 /*
  * Restart button
