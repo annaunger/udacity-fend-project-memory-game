@@ -39,6 +39,7 @@ function init() {
 
         // Add Click Event to each card
         click(card);
+        rating();
     }
 }
 
@@ -150,8 +151,8 @@ function addMove() {
     moves++;
     movesContainer.innerHTML = moves;
 
-    // Set the Rating
-    rating();
+    /* Set the Rating
+    rating();*/
 }
 
 /*
@@ -159,8 +160,6 @@ function addMove() {
  */
 
 const starsContainer = document.querySelector(".stars");
-
-
 
 function rating() {
 
