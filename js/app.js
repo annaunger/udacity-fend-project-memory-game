@@ -24,7 +24,7 @@ const cardsContainer = document.querySelector(".deck");
 
 let openedCards = [];
 let matchedCards = [];
-rating();
+
 
 
 /*
@@ -152,8 +152,8 @@ function addMove() {
     moves++;
     movesContainer.innerHTML = moves;
 
-    /* Set the Rating
-    rating();*/
+    Set the Rating
+    rating();
 }
 
 /*
