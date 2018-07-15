@@ -26,24 +26,8 @@ let openedCards = [];
 let matchedCards = [];
 
 // Hide modal
+
 /*
- * Initialize the game
- */
-
-function init(array) {
-  card = shuffle(icons);  // <-- ?
-    for (let i = 0; i < icons.length; i++) {
-        const card = document.createElement("li");
-        card.classList.add("card");
-        card.innerHTML = `<i class="${icons[i]}"></i>`;
-        cardsContainer.appendChild(card);
-
-        // Add Click Event to each card
-        click(card);
-
-    }
-}
-
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
     var currentIndex = array.length,
@@ -59,6 +43,41 @@ function shuffle(array) {
 
     return array;
 };
+*/
+//counter, index, temp
+// Shuffle function from http://stackoverflow.com/a/2450976
+function shuffle(array) {
+    let counter = array.length;
+
+    while (counter > 0) {
+        let index = Math.floor(Math.random() * counter);
+        counter--;
+        let temp = array[counter];
+        array[counter] = array[index];
+        array[index] = temp;
+    };
+
+    return array;
+};
+/*
+ * Initialize the game
+ */
+
+function init() {
+  //card = shuffle(icons);  // <-- ?
+    for (let i = 0; i < icons.length; i++) {
+        const card = document.createElement("li");
+        card.classList.add("card");
+        card.innerHTML = `<i class="${icons[i]}"></i>`;
+        cardsContainer.appendChild(card);
+
+        // Add Click Event to each card
+        click(card);
+
+    }
+}
+
+
 
 
 /*
@@ -71,8 +90,15 @@ function click(card) {
     // card click event
     card.addEventListener("click", function() {
 
+      if(isFirstClick) {
+        startTimer();
+        isFirstClick = false;
+      }
+
         const currentCard = this;
         const previousCard = openedCards[0];
+
+
 
         // We have an existing OPENED card
         if (openedCards.length === 1) {
@@ -210,6 +236,29 @@ function addMove() {
 
  }
 
+
+ /*
+  * Timer Start
+  */
+  function startTimer() {
+    liveTimer = setInterval(function() {
+      totalSeconds++;
+      timerContainer.innerHTML = totalSeconds;
+    }, 1000);
+  }
+
+const timerContainer = document.querySelector("timer");
+let liveTimer,
+  totalSeconds = 0;
+  timerContainer.innerHTML = totalSeconds;
+
+  /*
+   * Timer Stop
+   */
+function stopTimer() {
+  clearInterval(incrementer);
+}
+
 /*
  * Restart button
  */
@@ -243,7 +292,7 @@ init();
  *   - add each card's HTML to the page
  */
 
-// Shuffle function from http://stackoverflow.com/a/2450976
+/*// Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
     var currentIndex = array.length,
         temporaryValue, randomIndex;
@@ -258,3 +307,4 @@ function shuffle(array) {
 
     return array;
 };
+*/
