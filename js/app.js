@@ -244,7 +244,7 @@ function addMove() {
  /*
   * Timer Start
   */
-  function startTimer() {
+  /* function startTimer() {
     liveTimer = setInterval(function() {
       totalSeconds++;
       timerContainer.innerHTML = totalSeconds;
@@ -254,7 +254,7 @@ function addMove() {
 const timerContainer = document.querySelector("timer");
 let liveTimer,
   totalSeconds = 0;
-  timerContainer.innerHTML = totalSeconds;
+  timerContainer.innerHTML = totalSeconds; */
 
   /*
    * Timer Stop
