@@ -20,6 +20,8 @@ const icons = [
     'fa fa-cube'
 ];
 
+shuffle(icons)
+
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(icons) {
     let counter = array.length;
