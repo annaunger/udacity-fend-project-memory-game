@@ -272,7 +272,7 @@ function stopTimer() {
 const restartBtn = document.querySelector(".restart");
 restartBtn.addEventListener("click", function() {
     // Delete all cards
-    cardsContainer.innerHTML = "--";
+    cardsContainer.innerHTML = "";
 
     // Call ``ìnit` to create new cards
     init();
