@@ -92,10 +92,10 @@ function click(card) {
     // card click event
     card.addEventListener("click", function() {
 
-      if(isFirstClick) {
+  /*    if(isFirstClick) {
         startTimer();
         isFirstClick = false;
-      }
+      } */
 
         const currentCard = this;
         const previousCard = openedCards[0];
