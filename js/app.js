@@ -24,7 +24,7 @@ shuffle(icons)
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(icons) {
-    let counter = array.length;
+    let counter = icons.length;
 
     while (counter > 0) {
         let index = Math.floor(Math.random() * counter);
