@@ -20,6 +20,21 @@ const icons = [
     'fa fa-cube'
 ];
 
+// Shuffle function from http://stackoverflow.com/a/2450976
+function shuffle(icons) {
+    let counter = array.length;
+
+    while (counter > 0) {
+        let index = Math.floor(Math.random() * counter);
+        counter--;
+        let temp = icons[counter];
+        icons[counter] = icons[index];
+        icons[index] = temp;
+    };
+
+    return icons;
+};
+
 const cardsContainer = document.querySelector(".deck");
 
 let openedCards = [];
@@ -45,20 +60,7 @@ function shuffle(array) {
 };
 */
 //counter, index, temp
-// Shuffle function from http://stackoverflow.com/a/2450976
-function shuffle(array) {
-    let counter = array.length;
 
-    while (counter > 0) {
-        let index = Math.floor(Math.random() * counter);
-        counter--;
-        let temp = array[counter];
-        array[counter] = array[index];
-        array[index] = temp;
-    };
-
-    return array;
-};
 /*
  * Initialize the game
  */
