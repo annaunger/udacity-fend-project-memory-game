@@ -157,48 +157,35 @@ function compare(currentCard, previousCard) {
             previousCard.classList.remove("open", "show", "disable");
 
         }, 500);
-        //isOver();
-
-        function isOver() {
-          const totalSeconds = document.querySelector("#totalSeconds");
-          totalSeconds.innerHTML = seconds;
-            /*if (matchedCards.length === icons.length) {
-                alert("Well done, you made it!");*/
-            if(matchedCards === 8) {
-              // Stop our timer
-              stopTimer();
-              modal.innerHTML = "Well done!";
-
-            }
-            }
-        }
 
         openedCards = [];
-    //}  // <--- ?
+
+        }
+
 
     // Add New move
     addMove();
 
 
-}  // <--- ?
+}
 
 /*
  * Check if the game is over!
  */
 
-/*function isOver() {
-    if (matchedCards.length === icons.length) {
-        alert("Well done, you made it!");
-    }
-}*/
 
-/*// Wait 500 ms, then do this:
-setTimeout(function() {
-    currentCard.classList.remove("open", "show", "disable");
-    previousCard.classList.remove("open", "show", "disable");
+ function isOver() {
+   const totalSeconds = document.querySelector("#totalSeconds");
+   totalSeconds.innerHTML = seconds;
+     /*if (matchedCards.length === icons.length) {
+         alert("Well done, you made it!");*/
+     if(matchedCards === 8) {
+       // Stop our timer
+       stopTimer();
+       modal.innerHTML = "Well done!";
 
-}, 500);*/
-
+     }
+     }
 /*
  * Add move
  */
