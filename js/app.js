@@ -118,7 +118,10 @@ function click(card) {
             // We should compare our 2 opened cards!
             compare(currentCard, previousCard);
 
-            // den här blev kvar --> jag tar den till rad 103 }
+            openedCards = [];
+
+            // Check if the game is over!
+            isOver();
 
         } else {
 
