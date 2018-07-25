@@ -178,8 +178,8 @@ function compare(currentCard, previousCard) {  // change to matchedCards
 
 
  function isOver() {
-   const totalSeconds = document.querySelector("#totalSeconds");
-   totalSeconds.innerHTML = seconds;
+   //const totalSeconds = document.querySelector("#totalSeconds");
+   //totalSeconds.innerHTML = seconds;
      /*if (matchedCards.length === icons.length) {
          alert("Well done, you made it!");*/
      if(matchedCards === 8) {
