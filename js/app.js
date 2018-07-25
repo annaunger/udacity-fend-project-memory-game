@@ -116,7 +116,7 @@ function click(card) {
             openedCards.push(this);
 
             // We should compare our 2 opened cards!
-            matchedCards(currentCard, previousCard);
+            compare(currentCard, previousCard);
 
             openedCards = [];
 
@@ -136,7 +136,7 @@ function click(card) {
  * Compare the two cards
  */
 
-function matchedCards(currentCard, previousCard) {  // change to matchedCards
+function compare(currentCard, previousCard) {  // change to matchedCards
 
     // Matcher
     if (currentCard.innerHTML === previousCard.innerHTML) {
