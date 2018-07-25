@@ -182,7 +182,7 @@ function compare(currentCard, previousCard) {  // change to matchedCards
    //totalSeconds.innerHTML = seconds;
      /*if (matchedCards.length === icons.length) {
          alert("Well done, you made it!");*/
-     if(matchedCards === 8) {
+     if(matchedCards === icons.length) {
        // Stop our timer
        stopTimer();
        modal.innerHTML = "Well done!";
