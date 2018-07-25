@@ -146,8 +146,8 @@ function compare(currentCard, previousCard) {
 
         openedCards = [];
 
-        // Check if the game is over!
-        //isOver();
+        Check if the game is over!
+        isOver();
 
     } else {
 
