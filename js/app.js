@@ -94,10 +94,12 @@ function click(card) {
     // card click event
     card.addEventListener("click", function() {
 
-  /*    if(isFirstClick) {
-        startTimer();
-        isFirstClick = false;
-      } */
+      if(isFirstClick) {
+            // Start our timer
+            startTimer();
+            // Change our First Click indicator's value
+            isFirstClick = false;
+        }
 
         const currentCard = this;
         const previousCard = openedCards[0];
@@ -160,7 +162,10 @@ function compare(currentCard, previousCard) {
             /*if (matchedCards.length === icons.length) {
                 alert("Well done, you made it!");*/
             if(matchedCards === 8) {
+              // Stop our timer
+              stopTimer();
               modal.innerHTML = "Well done!";
+
             }
             }
         }
@@ -244,25 +249,26 @@ function addMove() {
 
 
  /*
-  * Timer Start
-  */
-  /* function startTimer() {
-    liveTimer = setInterval(function() {
-      totalSeconds++;
-      timerContainer.innerHTML = totalSeconds;
-    }, 1000);
-  }
-
-const timerContainer = document.querySelector("timer");
+ * Timer
+ */
+const timerContainer = document.querySelector(".timer");
 let liveTimer,
-  totalSeconds = 0;
-  timerContainer.innerHTML = totalSeconds; */
+    totalSeconds = 0;
 
-  /*
-   * Timer Stop
-   */
+// Set the default value to the timer's container
+timerContainer.innerHTML = totalSeconds + 's';
+
+function startTimer() {
+    liveTimer = setInterval(function() {
+        // Increase the totalSeconds by 1
+        totalSeconds++;
+        // Update the HTML Container with the new time
+        timerContainer.innerHTML = totalSeconds + 's';
+    }, 1000);
+}
+
 function stopTimer() {
-  clearInterval(incrementer);
+    clearInterval(liveTimer);
 }
 
 /*
@@ -274,8 +280,7 @@ restartBtn.addEventListener("click", function() {
     // Delete all cards
     cardsContainer.innerHTML = "";
 
-    // Call ``ìnit` to create new cards
-    init();
+
 
     // Reset ANY RELATED variables
     matchedCards = [];
@@ -283,6 +288,11 @@ restartBtn.addEventListener("click", function() {
     movesContainer.innerHTML = moves;
     starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>
    <li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
+
+   stopTimer();
+    isFirstClick = true;
+    totalSeconds = 0;
+    timerContainer.innerHTML = totalSeconds;
 });
 
 
