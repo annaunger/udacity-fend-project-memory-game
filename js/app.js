@@ -88,6 +88,9 @@ function init() {
  * Click event
  */
 
+ // First Click Indicator
+ let isFirstClick = true;
+
 function click(card) {
 
 
