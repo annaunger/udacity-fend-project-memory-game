@@ -142,7 +142,7 @@ function compare(currentCard, previousCard) { // change to matchedCards
 /*
  * Check if the game is over!
  */
-var modal = document.getElementById('modalAction');
+var modal = document.getElementById('modalAction').style.visibility = "hidden";
 var span = document.getElementsByClassName("close")[0];
 
 function isOver() {
