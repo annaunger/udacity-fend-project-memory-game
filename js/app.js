@@ -147,7 +147,7 @@ var span = document.getElementsByClassName("close")[0];
 
 function isOver() {
    
-    if (matchedCards === icons.length) {
+    if (matchedCards.length === icons.length) {
         // Stop our timer
         modal.style.display = "block";
         stopTimer();
