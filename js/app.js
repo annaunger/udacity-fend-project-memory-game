@@ -248,7 +248,7 @@ restartBtn.addEventListener("click", function() {
     stopTimer();
     isFirstClick = true;
     totalSeconds = 0;
-    timerContainer.innerHTML = totalSeconds;
+    timerContainer.innerHTML = totalSeconds + 's';
 });
 
 ///// Start the game for the first time!
