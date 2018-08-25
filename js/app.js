@@ -42,33 +42,11 @@ const cardsContainer = document.querySelector(".deck");
 let openedCards = [];
 let matchedCards = [];
 
-// Hide modal
-
-/*
-// Shuffle function from http://stackoverflow.com/a/2450976
-function shuffle(array) {
-    var currentIndex = array.length,
-        temporaryValue, randomIndex;
-
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    };
-
-    return array;
-};
-*/
-//counter, index, temp
-
 /*
  * Initialize the game
  */
-
 function init() {
-  //card = shuffle(icons);  // <-- ?
+    //card = shuffle(icons);  // <-- ?
     for (let i = 0; i < icons.length; i++) {
         const card = document.createElement("li");
         card.classList.add("card");
@@ -81,23 +59,17 @@ function init() {
     }
 }
 
-
-
-
 /*
  * Click event
  */
-
- // First Click Indicator
- let isFirstClick = true;
+// First Click Indicator
+let isFirstClick = true;
 
 function click(card) {
-
-
     // card click event
     card.addEventListener("click", function() {
 
-      if(isFirstClick) {
+        if (isFirstClick) {
             // Start our timer
             startTimer();
             // Change our First Click indicator's value
@@ -106,8 +78,6 @@ function click(card) {
 
         const currentCard = this;
         const previousCard = openedCards[0];
-
-
 
         // We have an existing OPENED card
         if (openedCards.length === 1) {
@@ -135,8 +105,7 @@ function click(card) {
 /*
  * Compare the two cards
  */
-
-function compare(currentCard, previousCard) {  // change to matchedCards
+function compare(currentCard, previousCard) { // change to matchedCards
 
     // Matcher
     if (currentCard.innerHTML === previousCard.innerHTML) {
@@ -163,36 +132,41 @@ function compare(currentCard, previousCard) {  // change to matchedCards
 
         openedCards = [];
 
-        }
-
-
+    }
+  
     // Add New move
     addMove();
-
 
 }
 
 /*
  * Check if the game is over!
  */
+var modal = document.getElementById('modalAction');
+var span = document.getElementsByClassName("close")[0];
 
+function isOver() {
+    //const totalSeconds = document.querySelector("#totalSeconds");
+    //totalSeconds.innerHTML = seconds;
+    /*if (matchedCards.length === icons.length) {
+        alert("Well done, you made it!");*/
+    if (matchedCards === icons.length) {
+        // Stop our timer
+        modal.style.display = "block";
+        stopTimer();
+    }
+}
 
- function isOver() {
-   //const totalSeconds = document.querySelector("#totalSeconds");
-   //totalSeconds.innerHTML = seconds;
-     /*if (matchedCards.length === icons.length) {
-         alert("Well done, you made it!");*/
-     if(matchedCards === icons.length) {
-       // Stop our timer
-       stopTimer();
-       modal.innerHTML = "Well done!";
+function closeModal() {
+    close.addEventListener('click', function() {
+        modal.style.display = 'none';
+        restartGame();
+    });
+};
 
-     }
-     }
 /*
  * Add move
  */
-
 const movesContainer = document.querySelector(".moves");
 let moves = 0;
 movesContainer.innerHTML = 0;
@@ -208,33 +182,31 @@ function addMove() {
 /*
  * Rating
  */
+const starsContainer = document.querySelector(".stars");
+starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
 
- const starsContainer = document.querySelector(".stars");
- starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
+function rating() {
 
- function rating() {
+    if (moves < 11) {
+        starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
 
-     if (moves < 11) {
-         starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
+    } else if (moves > 10 && moves < 15) {
+        starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
 
-     } else if (moves > 10 && moves < 15) {
-         starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
+    } else if (moves > 14 && moves < 20) {
+        starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
 
- } else if (moves > 14 && moves < 20) {
-         starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
+    } else if (moves > 19 && moves < 25) {
+        starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
 
- } else if (moves > 19 && moves < 25) {
-             starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
+    } else {
+        starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>`;
 
-         } else {
-         starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li>`;
+    }
 
-     }
+}
 
- }
-
-
- /*
+/*
  * Timer
  */
 const timerContainer = document.querySelector(".timer");
@@ -260,7 +232,6 @@ function stopTimer() {
 /*
  * Restart button
  */
-
 const restartBtn = document.querySelector(".restart");
 restartBtn.addEventListener("click", function() {
     // Delete all cards
@@ -274,38 +245,11 @@ restartBtn.addEventListener("click", function() {
     movesContainer.innerHTML = moves;
     starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
 
-   stopTimer();
+    stopTimer();
     isFirstClick = true;
     totalSeconds = 0;
     timerContainer.innerHTML = totalSeconds;
 });
 
-
 ///// Start the game for the first time!
 init();
-
-
-
-/*
- * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
- *   - loop through each card and create its HTML
- *   - add each card's HTML to the page
- */
-
-/*// Shuffle function from http://stackoverflow.com/a/2450976
-function shuffle(array) {
-    var currentIndex = array.length,
-        temporaryValue, randomIndex;
-
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    };
-
-    return array;
-};
-*/
