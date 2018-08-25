@@ -146,10 +146,7 @@ var modal = document.getElementById('modalAction');
 var span = document.getElementsByClassName("close")[0];
 
 function isOver() {
-    //const totalSeconds = document.querySelector("#totalSeconds");
-    //totalSeconds.innerHTML = seconds;
-    /*if (matchedCards.length === icons.length) {
-        alert("Well done, you made it!");*/
+   
     if (matchedCards === icons.length) {
         // Stop our timer
         modal.style.display = "block";
