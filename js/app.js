@@ -149,7 +149,7 @@ function isOver() {
    
     if (matchedCards.length === icons.length) {
         // Stop our timer
-        modal.style.display = "none";
+        Modal.style.visibility = "visible";
         stopTimer();
     }
 }
