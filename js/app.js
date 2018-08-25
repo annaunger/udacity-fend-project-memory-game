@@ -273,7 +273,7 @@ restartBtn.addEventListener("click", function() {
     // Delete all cards
     cardsContainer.innerHTML = "";
 
-
+    init();
 
     // Reset ANY RELATED variables
     matchedCards = [];
