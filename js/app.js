@@ -279,8 +279,7 @@ restartBtn.addEventListener("click", function() {
     matchedCards = [];
     moves = 0;
     movesContainer.innerHTML = moves;
-    starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>
-   <li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
+    starsContainer.innerHTML = `<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>`;
 
    stopTimer();
     isFirstClick = true;
